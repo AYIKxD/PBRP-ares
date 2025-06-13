@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/ares-twrp
+DEVICE_PATH := device/xiaomi/ares
 
 # For building with minimal manifest
 BUILD_BROKEN_DUP_RULES := true
