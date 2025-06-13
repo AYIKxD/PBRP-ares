@@ -248,13 +248,14 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_NTFS_3G := true
 
 # Additional UI Features
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := 50
-TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery/capacity"
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
-TW_FRAMERATE := 60
+TW_FRAMERATE := 120
+
+# PBRP specific flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true 
 
 # Additional Backup Features
 TW_BACKUP_EXCLUSIONS := /data/fonts
