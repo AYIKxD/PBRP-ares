@@ -65,11 +65,36 @@ git clone https://github.com/your-username/android_kernel_xiaomi_ares.git -b and
 source build/envsetup.sh
 
 # Lunch the device
-lunch omni_ares-eng
+lunch pb_ares-eng
 
 # Build the recovery
 mka recoveryimage
 ```
+
+## Troubleshooting
+
+If you encounter any build errors:
+
+1. Make sure you have Python installed:
+```bash
+sudo apt-get install python3
+```
+
+2. If you get "No such file or directory" errors for recovery/root:
+```bash
+mkdir -p device/xiaomi/ares-twrp/recovery/root
+```
+
+3. If you get path-related errors, make sure your device tree is in the correct location:
+```bash
+# Should be in:
+device/xiaomi/ares-twrp/
+```
+
+4. If you get "Don't have a product spec for: 'pb_ares'", make sure:
+- Your device tree is in the correct location
+- You've run `source build/envsetup.sh`
+- You're using the correct lunch command: `lunch pb_ares-eng`
 
 ## Credits
 
