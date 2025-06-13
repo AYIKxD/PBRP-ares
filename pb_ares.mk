@@ -12,12 +12,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit from ares device
-$(call inherit-product, device/xiaomi/ares-twrp/device.mk)
+$(call inherit-product, device/xiaomi/ares/device.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/xiaomi/ares-twrp/recovery/root,recovery/root)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/xiaomi/ares/recovery/root,recovery/root)
 
 PRODUCT_DEVICE := ares
 PRODUCT_NAME := pb_ares

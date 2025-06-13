@@ -56,7 +56,7 @@ git clone https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b androi
 cd pb
 
 # Clone the device tree
-git clone https://github.com/your-username/android_device_xiaomi_ares-twrp.git -b android-14.0 device/xiaomi/ares-twrp
+git clone https://github.com/your-username/android_device_xiaomi_ares.git -b android-14.0 device/xiaomi/ares
 
 # Clone the kernel
 git clone https://github.com/your-username/android_kernel_xiaomi_ares.git -b android-14.0 kernel/xiaomi/ares
@@ -82,13 +82,13 @@ sudo apt-get install python3
 
 2. If you get "No such file or directory" errors for recovery/root:
 ```bash
-mkdir -p device/xiaomi/ares-twrp/recovery/root
+mkdir -p device/xiaomi/ares/recovery/root
 ```
 
 3. If you get path-related errors, make sure your device tree is in the correct location:
 ```bash
 # Should be in:
-device/xiaomi/ares-twrp/
+device/xiaomi/ares/
 ```
 
 4. If you get "Don't have a product spec for: 'pb_ares'", make sure:
