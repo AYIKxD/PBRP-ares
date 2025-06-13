@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/xiaomi/ares-twrp
+LOCAL_PATH := device/xiaomi/ares
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
