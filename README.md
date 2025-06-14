@@ -10,7 +10,7 @@
 | Memory                  | 6/8 GB RAM                                                                 |
 | Shipped Android Version | Android 11                                                                 |
 | Storage                 | 128/256 GB UFS 3.1                                                        |
-| Battery                 | 5000 mAh, non-removable                                                   |
+| Battery                 | 5065 mAh, non-removable                                                   |
 | Dimensions              | 164.2 x 76.5 x 8.8 mm                                                     |
 | Display                 | 6.67 inches, 1080 x 2400 pixels, 120Hz, AMOLED                            |
 | Rear Camera            | 64 MP (wide) + 8 MP (ultrawide) + 2 MP (macro) + 2 MP (depth)             |
