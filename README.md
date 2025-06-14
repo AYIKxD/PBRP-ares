@@ -65,7 +65,7 @@ source build/envsetup.sh
 lunch pb_ares-eng
 
 # Build the recovery
-mka recoveryimage
+mka pbrp
 ```
 
 ## Troubleshooting
