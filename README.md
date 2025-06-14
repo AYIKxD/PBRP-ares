@@ -4,7 +4,7 @@
 
 | Feature                 | Specification                                                              |
 | :---------------------- | :------------------------------------------------------------------------- |
-| CPU                     | Octa-core (2x2.6 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)                    |
+| CPU                     | Octa-core (1x3.0 GHz Cortex-A78 & 3x2.6 GHz Cortex-A78 & 4x2.0 GHz Cortex-A55)                    |
 | Chipset                 | MediaTek MT6893 Dimensity 1200 5G (6 nm)                                  |
 | GPU                     | Mali-G77 MC9                                                              |
 | Memory                  | 6/8 GB RAM                                                                 |
@@ -14,11 +14,8 @@
 | Dimensions              | 164.2 x 76.5 x 8.8 mm                                                     |
 | Display                 | 6.67 inches, 1080 x 2400 pixels, 120Hz, AMOLED                            |
 | Rear Camera            | 64 MP (wide) + 8 MP (ultrawide) + 2 MP (macro) + 2 MP (depth)             |
-| Front Camera           | 20 MP (wide)                                                              |
+| Front Camera           | 16 MP (wide)                                                              |
 
-## Device picture
-
-![Xiaomi Ares](https://i01.appmifile.com/webfile/globalimg/pandora/pms_1617686662197.png)
 
 ## Features
 
