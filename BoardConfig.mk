@@ -163,14 +163,6 @@ TW_EXCLUDE_APEX := true
 
 # Add property handling
 TW_OVERRIDE_SYSTEM_PROPS := "ro.pb.version=4.0-UNOFFICIAL"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.build.version.incremental"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.build.version.release"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.build.version.security_patch"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.boot.product.vendor.sku"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.board.platform"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.boot.slot_suffix"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.boot.warranty_bit"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.warranty_bit"
 
 # Add fstab handling
 TW_HANDLE_FSTAB := true
