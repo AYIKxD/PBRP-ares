@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_ares.mk
+    $(LOCAL_DIR)/twrp_ares.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_ares-user \
-    omni_ares-userdebug \
-    omni_ares-eng
+    twrp_ares-user \
+    twrp_ares-userdebug \
+    twrp_ares-eng
