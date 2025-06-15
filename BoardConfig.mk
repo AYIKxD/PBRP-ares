@@ -88,31 +88,10 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_DTBOIMG_PARTITION_SIZE := 33554432
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 
-BOARD_SUPER_PARTITION_GROUPS := mediatek_dynamic_partitions
-BOARD_MEDIATEK_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product odm
-BOARD_MEDIATEK_DYNAMIC_PARTITIONS_SIZE := 9122611200
-
-# Add ODM partition size
+# ODM Partition
 BOARD_ODMIMAGE_PARTITION_SIZE := 33554432
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ODMIMAGE_EXTFS_INODE_COUNT := -1
-
-BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 614400000
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1520435200
-BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 92160000
-
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_ODM := odm
 
 # Product spec
@@ -162,9 +141,7 @@ TARGET_USES_MKE2FS := true
 TW_EXCLUDE_APEX := true
 
 # Add property handling
-TW_OVERRIDE_SYSTEM_PROPS := "ro.pb.version=4.0-UNOFFICIAL"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.boot.product.vendor.sku=$(TARGET_DEVICE)"
-TW_OVERRIDE_SYSTEM_PROPS += "ro.board.platform=$(TARGET_BOARD_PLATFORM)"
+TW_OVERRIDE_SYSTEM_PROPS := "ro.pb.version=4.0-UNOFFICIAL ro.boot.product.vendor.sku=ares ro.board.platform=mt6893"
 
 # Fstab handling
 TW_HANDLE_FSTAB := true
@@ -180,6 +157,22 @@ TW_HANDLE_FSTAB_RESIZE := true
 TW_HANDLE_FSTAB_SLOTSELECT := true
 TW_HANDLE_FSTAB_LOGICAL := true
 
+# Data partition handling
+TW_CRYPTO_FS_TYPE := "f2fs"
+TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt"
+TW_CRYPTO_FS_FLAGS := "wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/bootdevice/by-name/userdata"
+TW_CRYPTO_MNT_POINT := "/data"
+
+# Additional partition flags
+TW_HANDLE_FSTAB_FIRST_STAGE_MOUNT := true
+TW_HANDLE_FSTAB_LATEMOUNT := true
+TW_HANDLE_FSTAB_CHECKPOINT := true
+TW_HANDLE_FSTAB_FSVERITY := true
+TW_HANDLE_FSTAB_RESERVEDSIZE := true
+TW_HANDLE_FSTAB_KEYMASTER := true
+TW_HANDLE_FSTAB_KEYMASTER_VERSION := "4.0"
+
 # Encryption
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
@@ -190,11 +183,6 @@ TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 TW_CRYPTO_USE_SYSTEM_VOLD_DECRYPT := true
 TW_CRYPTO_USE_SYSTEM_VOLD_ENCRYPT := true
 TW_CRYPTO_FORCE_DECRYPT := true
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/bootdevice/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_TYPE := "f2fs"
-TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt"
-TW_CRYPTO_FS_FLAGS := "wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption"
 TW_CRYPTO_KEYMASTER_VERSION := "4.0"
 TW_CRYPTO_KEYMASTER_SERVICE := "android.hardware.keymaster@4.0::IKeymasterDevice/default"
 
@@ -237,3 +225,13 @@ BOARD_GPU_DRIVER_VERSION := g77
 BOARD_GPU_DRIVER_VARIANT := mc9
 BOARD_GPU_DRIVER_VARIANT_VERSION := 9
 BOARD_GPU_DRIVER_VARIANT_NAME := Mali-G77 MC9
+
+# Dynamic partitions
+BOARD_SUPER_PARTITION_GROUPS := mediatek_dynamic_partitions
+BOARD_MEDIATEK_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product odm
+BOARD_MEDIATEK_DYNAMIC_PARTITIONS_SIZE := 9122611200
+
+# Data partition
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 115601780736
+TARGET_USERIMAGES_USE_F2FS := true

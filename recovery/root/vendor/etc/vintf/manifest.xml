@@ -166,6 +166,26 @@
         <fqname>@4.0::IKeymasterDevice/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.keymaster</name>
+        <transport>hwbinder</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IKeymasterDevice</name>
+            <instance>beanpod</instance>
+        </interface>
+        <fqname>@4.0::IKeymasterDevice/beanpod</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.keymaster</name>
+        <transport>hwbinder</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IKeymasterDevice</name>
+            <instance>mitee</instance>
+        </interface>
+        <fqname>@4.0::IKeymasterDevice/mitee</fqname>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
