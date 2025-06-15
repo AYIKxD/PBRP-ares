@@ -16,7 +16,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/xiaomi/ares/device.mk)
 
 PRODUCT_DEVICE := ares
-PRODUCT_NAME := omni_ares
+PRODUCT_NAME := twrp_ares
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := M2104K10I
 PRODUCT_MANUFACTURER := xiaomi
